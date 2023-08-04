@@ -4,15 +4,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@400;600;700&family=Roboto&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
   <title>Nolorn Online Shop</title>
 </head>
 
 <body>
   <header>
-    <div class="header-wrapper container">
+    <div class="container">
       <div class="header-top">
-        Header top
+        <div class="search-form__outer">
+          <h2 class="logo header-top__logo">Nolorn</h2>
+          <div class="search-form search-form_margin">
+            <div class="dropdown dropdown-search">
+              <h5 class="dropdown__text dropdown__text_grey">All categories</h5>
+              <div class="dropdown__arrow">
+                <img src="images/down-arrow.png" alt="down arrow">
+              </div>
+              <div class="dropdown__options dropdown-search__options">
+                <a href="#">Sets</a>
+                <a href="#">Fruits</a>
+                <a href="#">Vegetables</a>
+              </div>
+            </div>
+            <div class="search-form__input-outer">
+              <input class="search-form__input" type="text" placeholder="Search...">
+              <button class="search-form__button"><img class="search-form__button-icon" src="images/search.png"
+                     alt="search icon"></button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="navigation">
+          <div class="dropdown dropdown-location_size">
+            <img src="images/location.png" alt="location icon">
+            <h5 class="dropdown__text dropdown__text_green">All categories</h5>
+            <div class="dropdown__arrow">
+              <img src="images/down-arrow.png" alt="down arrow">
+            </div>
+            <div class="dropdown__options">
+              <a href="#">Sets</a>
+              <a href="#">Fruits</a>
+              <a href="#">Vegetables</a>
+            </div>
+          </div>
+
+          <ul class="widgets">
+            <li class="widgets__item">
+              <div class="widgets__item-icon_outer">
+                <img class="widgets__item-icon widgets__item-icon_wish" src="images/heart.png" alt="heart icon">
+                <div class="widgets__item-icon-count_box">
+                  <div class="widgets__item-count-icon">1</div>
+                </div>
+              </div>
+              <span class="widgets__item-text">Wishlist</span>
+            </li>
+            <li class="widgets__item">
+              <div class="widgets__item-icon_outer">
+                <img class="widgets__item-icon widgets__item-icon_cart" src="images/cart.png" alt="cart icon">
+                <div class="widgets__item-icon-count_box">
+                  <div class="widgets__item-count-icon">1</div>
+                </div>
+              </div>
+              <span class="widgets__item-text widgets__item-text-cart">Cart</span>
+            </li>
+            <li class="widgets__item">
+              <div class="widgets__item-icon_outer widgets__item-icon_outer-account">
+                <img class="widgets__item-icon widgets__item-icon_account" src="images/account.png" alt="account icon">
+              </div>
+              <span class="widgets__item-text">Account</span>
+            </li>
+          </ul>
+
+        </nav>
       </div>
       <div class="header-menu">
         Menu

@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+}
+
+:root {
+  --color-green: #27ca7d;
+  --color-grey: #253d4e;
+  --color-light-grey: #939393;
+  --color-white: #fff;
+  --color-black: #000;
+}
+
+input,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  border: none;
+}
+
+body {
+  background: var(--color-white);
+  font-family: "Quicksand", sans-serif;
+  color: var(--color-black);
+}
+
+.container {
+  width: 1170px;
+  /* border: 1px solid black; */
+  margin: auto;
+}
