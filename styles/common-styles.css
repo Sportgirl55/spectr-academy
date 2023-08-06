@@ -8,7 +8,7 @@
 
 :root {
   --color-green: #27ca7d;
-  --color-grey: #253d4e;
+  --color-light-black: #253d4e;
   --color-light-grey: #939393;
   --color-white: #fff;
   --color-black: #000;
@@ -23,10 +23,17 @@ button:focus {
   border: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
   background: var(--color-white);
   font-family: "Quicksand", sans-serif;
   color: var(--color-black);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .container {
