@@ -1,5 +1,6 @@
 @import url("common-styles.css");
 @import url("header.css");
+@import url("footer.css");
 @import url("dropdown.css");
 
 .subscribe-banner {
@@ -34,12 +35,7 @@
   border: 1px solid yellow;
 }
 
-.footer {
-  height: 460.5px;
-  border: 1px solid black;
-}
-
-
 .nav-bar {
   margin-right: 64px;
 }
+

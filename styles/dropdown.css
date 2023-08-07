@@ -19,7 +19,7 @@
 
 .dropdown__text_green {
   color: var(--color-green);
-  padding-right: 5px;
+  margin-right: 5px;
 }
 
 .dropdown__text_grey {

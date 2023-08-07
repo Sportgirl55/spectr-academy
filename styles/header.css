@@ -5,7 +5,7 @@
 }
 
 .header-top_margin {
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .header-menu {
@@ -27,7 +27,7 @@
   font-weight: 600;
 }
 
-.header-top__logo {
+.logo_paddings {
   padding: 0px 19px 7px 0px;
 }
 
@@ -54,6 +54,7 @@
 .widgets__item {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .widgets__item-text {
@@ -145,7 +146,6 @@
   border-radius: 4px;
   border: 1px solid var(--4, #d4eee2);
   background: var(--color-white);
-
 }
 
 .search-form_margin {
@@ -216,26 +216,33 @@
   align-items: center;
   gap: 8px;
   align-self: stretch;
+  cursor: pointer;
 }
 
-.contacts {
+.socials img:hover,
+.socials svg:hover {
+  transition: transform 0.3s;
+  transform: scale(0.9);
+}
+
+.phone {
   display: flex;
   align-items: center;
 }
 
-.contacts__outer {
+.phone__outer {
   border-left: 0.5px solid var(--color-light-grey);
   margin-left: 19px;
 }
 
-.contacts__inner {
+.phone__inner {
   display: flex;
   flex-direction: column;
   margin-left: 2px;
   font-family: Lato;
 }
 
-.contacts__phone-icon {
+.phone__icon {
   display: flex;
   width: 24px;
   height: 24px;
@@ -246,13 +253,13 @@
   margin-right: 6px;
 }
 
-.contacts__phone {
+.phone__number {
   color: var(--color-light-black);
   font-size: 18px;
   margin-bottom: 4px;
 }
 
-.contacts__hours {
+.phone__hours {
   color: var(--color-light-grey);
   font-size: 10px;
   letter-spacing: 0.1px;
