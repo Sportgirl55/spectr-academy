@@ -93,14 +93,14 @@
   margin-bottom: 24px;
 }
 
-.company__item a,
-.account__item a {
+.company__link,
+.account__link {
   color: var(--color-light-grey);
 }
 
-.company__item a:hover,
-.account__item a:hover {
-  color: #27CA7D;
+.company__link:hover,
+.account__link:hover {
+  color: var(--color-green);
 }
 
 .download {

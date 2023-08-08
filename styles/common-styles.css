@@ -4,6 +4,7 @@
   box-sizing: border-box;
   outline: none;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 :root {
@@ -15,12 +16,16 @@
 }
 
 input,
+button,
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-  outline: none;
   border: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 ul {

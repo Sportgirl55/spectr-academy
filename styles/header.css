@@ -174,8 +174,6 @@
 
 .search-form__button {
   background-color: transparent;
-  border: none;
-  cursor: pointer;
 
   display: flex;
   width: 24px;
@@ -187,6 +185,10 @@
 .search-form__button-icon {
   width: 24px;
   height: 24px;
+}
+
+.search-form__button-icon:active {
+  transform: scale(0.9);
 }
 
 /* Menu */
@@ -211,6 +213,14 @@
   color: var(--color-green);
 }
 
+.menu__item:first-child:hover a {
+  color: var(--color-light-black);
+}
+
+.menu__item:hover > a {
+  color: var(--color-green);
+}
+
 .socials {
   display: flex;
   align-items: center;
@@ -222,7 +232,13 @@
 .socials img:hover,
 .socials svg:hover {
   transition: transform 0.3s;
-  transform: scale(0.9);
+  transform: scale(1.1);
+}
+
+.socials img:active,
+.socials svg:active {
+  transition: transform 0.3s;
+  transform: scale(1);
 }
 
 .phone {

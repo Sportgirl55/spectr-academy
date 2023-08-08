@@ -1,0 +1,28 @@
+/* Green button */
+
+.btn-green {
+  display: flex;
+  padding: 13px 23px 13px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  border-radius: 4px;
+  background: var(--15, linear-gradient(315deg, #19c179 0%, #4fe58a 100%));
+
+  color: var(--color-white);
+
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: 700;
+  width: 141px;
+  cursor: pointer;
+}
+
+.btn-green:active {
+  transform: scale(0.97);
+}
+
+.btn-green:hover {
+  outline: 1px solid var(--color-light-grey);
+}
