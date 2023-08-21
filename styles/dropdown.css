@@ -47,15 +47,15 @@
 }
 
 .dropdown-header-menu {
-  padding: 10px 14px;
-  margin-right: 63px;
-  width: 251px;
+  padding: 11px 13px 11px 16px;
+  margin-right: 50px;
+  width: 252px;
 
   border-radius: 4px;
   background: var(--15, linear-gradient(315deg, #19c179 0%, #4fe58a 100%));
 }
 
-.dropdown-header-menu__text{
+.dropdown-header-menu__text {
   color: var(--color-white);
   word-spacing: 2px;
 }
@@ -87,5 +87,5 @@
 }
 
 .dropdown__arrow_menu {
-  margin-left: 5px
+  margin-left: 5px;
 }

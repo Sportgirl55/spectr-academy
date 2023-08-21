@@ -8,10 +8,11 @@
 
 :root {
   --color-green: #27ca7d;
+  --color-light-green: #d4eee2;
+  --color-black: #000;
   --color-light-black: #253d4e;
   --color-light-grey: #939393;
   --color-white: #fff;
-  --color-black: #000;
 }
 
 input,
@@ -43,4 +44,33 @@ body {
 .container {
   width: 1170px;
   margin: auto;
+}
+
+.title_h4 {
+  font-family: "Quicksand", sans-serif;
+  color: var(--color-light-black);
+  font-size: 20px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+/* Section Title */
+
+.section__title {
+  color: var(--color-light-black);
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.section__title_green {
+  color: var(--color-green);
+}
+
+body .active a {
+  color: var(--color-green);
+}
+
+.mb-100 {
+  margin-bottom: 100px;
 }
