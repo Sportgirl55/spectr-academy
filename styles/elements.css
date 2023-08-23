@@ -8,7 +8,7 @@
   gap: 15px;
 
   border-radius: 4px;
-  background: var(--15, linear-gradient(315deg, #19c179 0%, #4fe58a 100%));
+  background: var(--color-green-gradient);
 
   color: var(--color-white);
 

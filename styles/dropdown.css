@@ -49,10 +49,10 @@
 .dropdown-header-menu {
   padding: 11px 13px 11px 16px;
   margin-right: 50px;
-  width: 252px;
+  min-width: 252px;
 
   border-radius: 4px;
-  background: var(--15, linear-gradient(315deg, #19c179 0%, #4fe58a 100%));
+  background: var(--color-green-gradient);
 }
 
 .dropdown-header-menu__text {

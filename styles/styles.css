@@ -8,27 +8,21 @@
 
 .slider_background {
   background-image: url("/images/background.jpg");
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .slider_outer {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-column-gap: 30px;
   padding: 31px 0 32px 0;
+  gap: var(--gap);
 }
 
 .slider {
   position: relative;
   background-image: url("/images/glass.jpg");
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  border-radius: 8px;
+  max-height: 438px;
 }
 
 .slider__content {
@@ -40,8 +34,8 @@
 
 .slider__title {
   color: var(--color-light-black);
-  font-size: 56px;
   font-weight: 700;
+  font-size: clamp(32px, 5vw, 56px);
 }
 
 .slider__subtitle {
@@ -54,7 +48,7 @@
 
 .subscribe {
   display: flex;
-  width: 420px;
+  min-width: 420px;
   justify-content: space-between;
 
   border-radius: 4px;
@@ -76,6 +70,7 @@
   letter-spacing: 0.14px;
   color: var(--color-light-grey);
 }
+
 .subscribe .subscribe__btn {
   width: 106px;
   padding: 12px 16px 13px 16px;
@@ -89,10 +84,6 @@
 
 .banner {
   background-image: url("/images/peaches.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: lightgray;
   border-radius: 8px;
 }
 
@@ -102,9 +93,7 @@
 
 /* Main */
 
-.categories__header {
-  display: flex;
-  justify-content: space-between;
+.categories__header_margin {
   margin-bottom: 8px;
 }
 
@@ -114,7 +103,13 @@
 
 .slider-small {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  overflow-y: inherit;
+  gap: var(--gap);
+  max-height: 145px;
 }
 
 .slider-small__btn {
@@ -136,7 +131,7 @@
 }
 
 .slider-small__btn_right {
-  background: var(--15, linear-gradient(315deg, #19c179 0%, #4fe58a 100%));
+  background: var(--color-green-gradient);
   margin-left: 12px;
 }
 
@@ -227,16 +222,18 @@
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: var(--gap);
 }
 
 .cards__item {
   border-radius: 8px;
-  background-color: lightgray;
-  background-repeat: no-repeat;
-  background-size: contain;
+  max-width: 370px;
+  max-height: 230px;
 }
 
 .oranges {
@@ -261,10 +258,8 @@
 
 /* Popular Products */
 
-.products__header {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 9px;
+.products__header_margin {
+  margin-bottom: 9px;
 }
 
 .products__menu {
@@ -272,7 +267,6 @@
   grid-template-columns: repeat(5, auto);
   align-items: center;
   height: 52px;
-
   margin-right: 1px;
 }
 
@@ -294,9 +288,11 @@
 }
 
 .products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  gap: var(--gap);
 }
 
 .products__item {
@@ -307,7 +303,7 @@
   position: relative;
   overflow: hidden;
 
-  padding: 12px 12px 18px 12px;
+  padding: 12px 10px 18px 12px;
   border-radius: 8px;
   border: 0.5px solid var(--color-light-grey);
   background: var(--color-white);
@@ -364,7 +360,7 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .products__fav:active {
@@ -406,7 +402,8 @@
 
 .products__bottom {
   display: flex;
-  padding-top: 14px;
+  margin-top: 14px;
+  margin-left: -2px;
 }
 
 .products__prices {
@@ -438,7 +435,7 @@
   margin-right: 2px;
 
   border-radius: 4px;
-  background: var(--color-light-green);
+  background-color: var(--color-light-green);
 
   font-family: "Quicksand", sans-serif;
   color: var(--color-green);
