@@ -1,22 +1,10 @@
 .header-top {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-top_margin {
   margin: 20px auto;
 }
 
 /* search form */
 
-.search-form__outer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-
+.search-form_width {
   max-width: 670px;
   width: 100%;
 }
@@ -78,12 +66,7 @@
   margin-right: 12px;
 }
 
-.search-form__icon {
-  width: 24px;
-  height: 24px;
-}
-
-.search-form__icon:active {
+.search-form__button:active {
   transform: scale(0.9);
 }
 
@@ -117,14 +100,6 @@
   position: relative;
 }
 
-.widgets__icon {
-  display: flex;
-  width: 24px;
-  height: 24px;
-  justify-content: center;
-  align-items: center;
-}
-
 .widgets__icon_outer-account {
   width: 24px;
   height: 24px;
@@ -132,12 +107,7 @@
 }
 
 .widgets__icon_wish {
-  padding: 2.25px 1.25px;
-  margin-right: 6px;
-}
-
-.widgets__icon_cart {
-  padding: 2px 1px 3px 0px;
+  margin-right: 8px;
 }
 
 .widgets__icon_account {
@@ -173,6 +143,10 @@
   font-family: Lato;
   font-size: 16px;
   padding-left: 4px;
+}
+
+.widgets__text:hover {
+  color: var(--color-green);
 }
 
 .widgets__text_padding {
@@ -215,30 +189,6 @@
 
 .menu__item:hover > a {
   color: var(--color-green);
-}
-
-.socials {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-}
-
-.socials__icon {
-  width: 20px;
-  height: 20px;
-}
-
-.socials__icon:hover,
-.socials svg:hover {
-  transition: transform 0.3s;
-  transform: scale(1.1);
-}
-
-.socials__icon:active,
-.socials svg:active {
-  transition: transform 0.3s;
-  transform: scale(1);
 }
 
 .phone {

@@ -99,6 +99,7 @@
 
 .slider-small__btns {
   display: flex;
+  gap: 12px;
 }
 
 .slider-small {
@@ -126,13 +127,16 @@
     0px 9px 15px 0px rgba(9, 30, 66, 0.08);
 }
 
-.slider-small__btn:active {
-  transform: scale(0.93);
+.slider-small__btn:hover {
+  background: var(--color-green-gradient);
 }
 
-.slider-small__btn_right {
-  background: var(--color-green-gradient);
-  margin-left: 12px;
+.slider-small__btn:hover path {
+  fill: var(--color-white);
+}
+
+.slider-small__btn:active {
+  transform: scale(0.95);
 }
 
 .slider-small__item {
@@ -147,8 +151,12 @@
   cursor: pointer;
 }
 
+.slider-small__item:hover {
+  transform: scale(0.97);
+}
+
 .slider-small__item:active {
-  transform: scale(0.93);
+  outline: 1px solid var(--color-light-green);
 }
 
 .green {
@@ -279,6 +287,10 @@
   color: var(--color-light-grey);
 }
 
+.products__category a:hover {
+  color: var(--color-green);
+}
+
 .products__category:nth-child(odd) {
   margin-left: 24px;
 }
@@ -308,6 +320,11 @@
   border: 0.5px solid var(--color-light-grey);
   background: var(--color-white);
   font-family: Lato;
+  cursor: pointer;
+}
+
+.products__item:hover {
+  transform: scale(0.99);
 }
 
 .products__badge {
@@ -320,8 +337,8 @@
   z-index: 10;
   width: 122px;
   transform: rotate(-45deg);
-  margin-left: -46px;
-  padding: 8px 18px 8px 22px;
+  margin-left: -45px;
+  padding: 9px 20px 8px 23px;
 
   font-size: 16px;
   color: var(--color-white);
@@ -392,6 +409,10 @@
   gap: 2px;
 }
 
+.products__star:hover {
+  transform: scale(1.1);
+}
+
 .products__rate {
   font-size: 16px;
   color: var(--color-light-black);
@@ -445,6 +466,10 @@
 
 .products__button:active {
   transform: scale(0.96);
+}
+
+.products__button:hover {
+  outline: 1px solid var(--color-green);
 }
 
 /* Daily Best Sells */

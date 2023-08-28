@@ -26,3 +26,20 @@
 .btn-green:hover {
   outline: 1px solid var(--color-light-grey);
 }
+
+/* Socials */
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.socials__icon_stroke:hover path {
+  stroke: var(--color-green);
+}
+
+.socials__icon_fill:hover path {
+  fill: var(--color-green);
+}

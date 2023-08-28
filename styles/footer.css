@@ -7,7 +7,7 @@
 .contacts_outer {
   display: grid;
   grid-template-columns: 31.6% 14.55% 23.05% 1fr;
-  grid-column-gap: var(--gap);;
+  grid-column-gap: var(--gap);
   margin-bottom: 63px;
 }
 
@@ -153,6 +153,10 @@
   display: flex;
   align-items: center;
   gap: 9px;
+}
+
+.phones__item a {
+  color: var(--color-light-black);
 }
 
 .about {
