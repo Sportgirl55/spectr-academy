@@ -1,0 +1,169 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 60px auto;
+}
+
+.contacts_outer {
+  display: grid;
+  grid-template-columns: 31.6% 14.55% 23.05% 1fr;
+  grid-column-gap: var(--gap);
+  margin-bottom: 63px;
+}
+
+.contacts {
+  border-bottom: 0.5px solid var(--color-light-grey);
+}
+
+.socials_margin {
+  margin: 31px 0 34px -2px;
+}
+
+.contacts__item {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.contacts__item:last-child {
+  margin-bottom: 28px;
+  margin-top: -2px;
+}
+
+.contacts__item_margin {
+  margin-bottom: 22px;
+}
+
+.icon__box {
+  margin-top: -2px;
+  margin-right: 9px;
+}
+
+.icon__box_address {
+  margin-right: 8px;
+  margin-left: -1px;
+}
+
+.contacts__text {
+  color: var(--color-light-black);
+  font-family: Lato;
+  font-size: 14px;
+}
+
+.contacts__text_hours {
+  word-spacing: 1px;
+}
+
+.contacts__text_padding {
+  padding-top: 2px;
+  letter-spacing: 0.05px;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.company__item,
+.account__item {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.company__link,
+.account__link {
+  color: var(--color-light-grey);
+}
+
+.company__link:hover,
+.account__link:hover {
+  color: var(--color-green);
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+}
+
+.download__text {
+  font-family: Lato;
+  font-size: 14px;
+  color: var(--color-light-grey);
+
+  margin: 24px 0;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.badges__item {
+  display: flex;
+  width: 170px;
+  height: 50px;
+  padding: 8.539px 11.788px 7.492px 12.656px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  border-radius: 13px;
+  border: 1px solid var(--color-light-black);
+  background: var(--color-white);
+  transition: transform 0.3s;
+}
+
+.badges__item:hover {
+  transform: scale(0.97);
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--color-light-black);
+  font-family: Lato;
+  font-size: 14px;
+  padding-top: 19px;
+
+  border-top: 0.5px solid var(--color-light-grey);
+}
+
+.copyright__text {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.copyright__text_green {
+  color: var(--color-green);
+}
+
+.phones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 26px;
+}
+
+.phones__item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.phones__item a {
+  color: var(--color-light-black);
+}
+
+.about {
+  display: flex;
+  align-items: center;
+}
+
+.heart-icon__box {
+  margin: 2px 5px 0;
+}
