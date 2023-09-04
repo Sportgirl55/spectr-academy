@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+.wrapper._white {
+  background: #fff;
+}
+.wrapper._black {
+  background: #000;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+}
+.box._white {
+  background: #fff;
+  color: #000;
+}
+.box._black {
+  background: #000;
+  color: #fff;
+}
+
+.buttons {
+  position: absolute;
+  right: 0;
+}
