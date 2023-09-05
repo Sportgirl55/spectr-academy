@@ -20,11 +20,11 @@
 }
 
 .btn-green:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .btn-green:hover {
-  outline: 1px solid var(--color-light-grey);
+  outline: 1px solid var(--color-green);
 }
 
 /* Socials */
@@ -42,4 +42,52 @@
 
 .socials__icon_fill:hover path {
   fill: var(--color-green);
+}
+
+/* slider */
+
+.products-slider {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 534px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+  height: 483px;
+}
+
+.slider__dots {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+}
+
+.slider__dot {
+  height: 11.5px;
+  width: 11.5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.5s;
+  outline: 1px solid #19c179;
+  background-color: var(--color-white);
+}
+
+.slider__dot:last-child {
+  margin: 0;
+}
+
+.slider__dot_active {
+  background-color: #19c179;
+  opacity: 1;
 }

@@ -76,11 +76,11 @@
   padding: 12px 16px 13px 16px;
 }
 
-.slider__dots {
+/* .slider__dots {
   position: absolute;
   bottom: 19px;
   left: 47.5%;
-}
+} */
 
 .banner {
   background-image: url("/images/peaches.jpg");
@@ -152,7 +152,7 @@
 }
 
 .slider-small__item:hover {
-  transform: scale(0.97);
+  box-shadow: var(--color-shadow);
 }
 
 .slider-small__item:active {
@@ -165,8 +165,7 @@
 
 .white {
   background-color: var(--color-white);
-  box-shadow: 0px 0px 1px 0px rgba(9, 30, 66, 0.31),
-    0px 23px 18px 0px rgba(9, 30, 66, 0.08);
+  outline: 0.5px solid #e9ecf4;
 }
 
 .pink {
@@ -234,7 +233,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   gap: var(--gap);
 }
 
@@ -256,6 +254,18 @@
   background-image: url("/images/berries.png");
 }
 
+.pineapple {
+  background-image: url("/images/pineapples.jpg");
+}
+
+.bananas {
+  background-image: url("/images/bananas.jpg");
+}
+
+.buckthorn {
+  background-image: url("/images/buckthorn.jpg");
+}
+
 .cards__content {
   display: inline-flex;
   flex-direction: column;
@@ -264,10 +274,19 @@
   margin: 92px 102px 29px 30px;
 }
 
+.cards__item_border {
+  outline: 0.5px solid var(--color-light-grey);
+}
+
+.cards__item:hover {
+  outline: none;
+  box-shadow: var(--color-shadow);
+}
+
 /* Popular Products */
 
 .products__header_margin {
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .products__menu {
@@ -303,8 +322,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  overflow: hidden;
-  gap: var(--gap);
+  gap: 32px;
 }
 
 .products__item {
@@ -317,14 +335,15 @@
 
   padding: 12px 10px 18px 12px;
   border-radius: 8px;
-  border: 0.5px solid var(--color-light-grey);
+  outline: 0.5px solid var(--color-light-grey);
   background: var(--color-white);
   font-family: Lato;
   cursor: pointer;
 }
 
 .products__item:hover {
-  transform: scale(0.99);
+  outline: none;
+  box-shadow: var(--color-shadow);
 }
 
 .products__badge {
@@ -474,7 +493,47 @@
 
 /* Daily Best Sells */
 
-.daily {
-  border: 1px solid red;
-  height: 627px;
+.big-card {
+  width: 268px;
+  height: 482px;
+  flex-shrink: 0;
+  background-image: url("/images/milk.jpg");
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.big-card__content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 6px;
+  margin-right: 43px;
+}
+
+.big-card__title {
+  font-family: Quicksand;
+  line-height: normal;
+}
+
+.products__bottom_wide {
+  flex-direction: column;
+  width: 100%;
+  max-width: 230px;
+  margin-top: 11px;
+  margin-left: 0;
+}
+
+.products__button_wide {
+  margin: 0;
+  color: var(--color-white);
+  background: var(--color-green-gradient);
+}
+
+.products__prices_wide {
+  margin-bottom: 15px;
+}
+
+.slider-small__btns_margin {
+  margin-top: 8px;
 }
