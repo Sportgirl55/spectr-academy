@@ -6,39 +6,50 @@
 
 /* Subscribe slider & banner */
 
-.slider_background {
+.slider-banner {
   background-image: url("/images/background.jpg");
   overflow-wrap: break-word;
 }
 
-.slider_outer {
+.slider-banner_outer {
   display: grid;
   grid-template-columns: 2fr 1fr;
   padding: 31px 0 32px 0;
   gap: var(--gap);
 }
 
-.slider {
-  position: relative;
-  background-image: url("/images/glass.jpg");
-  border-radius: 8px;
+.main-slider {
+  height: 437px;
+  width: 770px;
+  background-color: #f1fcfe;
+}
+
+.main-slide {
   max-height: 438px;
 }
 
-.slider__content {
+.slider-1 {
+  background-image: url("/images/glass.jpg");
+}
+
+.slider-2 {
+  background-image: url("/images/fruit.png");
+}
+
+.main-slider__content {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 90px 300px 86px 50px;
+  padding: 90px 300px 86px 50px;
 }
 
-.slider__title {
+.main-slider__title {
   color: var(--color-light-black);
   font-weight: 700;
   font-size: clamp(32px, 5vw, 56px);
 }
 
-.slider__subtitle {
+.main-slider__subtitle {
   color: var(--color-light-grey);
   font-family: Lato;
   font-size: 18px;
@@ -75,12 +86,6 @@
   width: 106px;
   padding: 12px 16px 13px 16px;
 }
-
-/* .slider__dots {
-  position: absolute;
-  bottom: 19px;
-  left: 47.5%;
-} */
 
 .banner {
   background-image: url("/images/peaches.jpg");
@@ -534,6 +539,11 @@
   margin-bottom: 15px;
 }
 
-.slider-small__btns_margin {
-  margin-top: 8px;
+.products-slider {
+  justify-content: center;
+  height: 534px;
+}
+
+.products-slide {
+  height: 483px;
 }

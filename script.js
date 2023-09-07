@@ -1,12 +1,6 @@
-const slides = document.querySelectorAll(".slide");
-const btnRight = document.querySelector(".slider-small__btn_right");
-const btnLeft = document.querySelector(".slider-small__btn_left");
-const dotContainer = document.querySelector(".slider__dots");
+const slider = (slides, dotContainer, slider) => {
+  let curSlide = 0;
 
-let curSlide = 0;
-const maxSlide = slides.length;
-
-const slider = () => {
   const createDots = () => {
     slides.forEach((_, i) => {
       dotContainer.insertAdjacentHTML(
@@ -17,49 +11,79 @@ const slider = () => {
   };
 
   const activateDot = (slide) => {
-    document
-      .querySelectorAll(".slider__dot")
-      .forEach((dot) => dot.classList.remove("slider__dot_active"));
-
-    document
-      .querySelector(`.slider__dot[data-slide="${slide}"]`)
-      .classList.add("slider__dot_active");
+    dotContainer.querySelectorAll(".slider__dot").forEach((dot) => {
+      dot.classList.toggle("slider__dot_active", dot.dataset.slide == slide);
+    });
   };
 
-  const goToSlide = function (slide) {
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${110 * (i - slide)}%)`)
-    );
+  const goToSlide = (slide) => {
+    slides.forEach((s, i) => {
+      s.style.transform = `translateX(${110 * (i - slide)}%)`;
+    });
   };
 
   const nextSlide = () => {
-    curSlide === maxSlide - 1 ? (curSlide = 0) : curSlide++;
+    curSlide = (curSlide + 1) % slides.length;
     goToSlide(curSlide);
     activateDot(curSlide);
   };
 
   const prevSlide = () => {
-    curSlide === 0 ? (curSlide = maxSlide - 1) : curSlide--;
+    curSlide = (curSlide - 1 + slides.length) % slides.length;
     goToSlide(curSlide);
     activateDot(curSlide);
   };
 
-  const init = () => {
+  const swipeSlider = () => {
+    let initialX;
+    let initialY;
+
+    slider.addEventListener("touchstart", (event) => {
+      initialX = event.touches[0].clientX;
+      initialY = event.touches[0].clientY;
+    });
+
+    slider.addEventListener("touchmove", (event) => {
+      if (!initialX || !initialY) {
+        return;
+      }
+
+      const currentX = event.touches[0].clientX;
+      const currentY = event.touches[0].clientY;
+      const diffX = initialX - currentX;
+      const diffY = initialY - currentY;
+
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        diffX > 0 ? nextSlide() : prevSlide();
+      }
+
+      initialX = null;
+      initialY = null;
+    });
+  };
+
+  const initBannerSlider = () => {
     goToSlide(0);
     createDots();
     activateDot(0);
+    swipeSlider();
   };
 
-  init();
+  initBannerSlider();
 
-  // Event handlers
-
-  btnRight.addEventListener("click", nextSlide);
-  btnLeft.addEventListener("click", prevSlide);
+  const sliderSmallBtns = slider.previousElementSibling?.querySelector(
+    ".slider-small__btns"
+  );
+  if (sliderSmallBtns) {
+    const btnRight = sliderSmallBtns.querySelector(".slider-small__btn_right");
+    const btnLeft = sliderSmallBtns.querySelector(".slider-small__btn_left");
+    btnRight.addEventListener("click", nextSlide);
+    btnLeft.addEventListener("click", prevSlide);
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") nextSlide();
-    e.key === "ArrowLeft" && prevSlide();
+    if (e.key === "ArrowLeft") prevSlide();
   });
 
   dotContainer.addEventListener("click", (e) => {
@@ -71,5 +95,12 @@ const slider = () => {
   });
 };
 
-slider();
+const mainSlider = document.querySelector(".main-slider");
+const mainSlides = mainSlider.querySelectorAll(".main-slide");
+const mainDotContainer = mainSlider.querySelector(".slider__dots");
+slider(mainSlides, mainDotContainer, mainSlider);
 
+const productsSlider = document.querySelector(".products-slider");
+const productSlides = productsSlider.querySelectorAll(".products-slide");
+const dotContainer = productsSlider.querySelector(".slider__dots");
+slider(productSlides, dotContainer, productsSlider);

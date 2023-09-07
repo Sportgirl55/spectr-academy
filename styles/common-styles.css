@@ -120,7 +120,7 @@ body .active a {
     margin-left: 0;
   }
 
-  section .slider_outer {
+  section .slider-banner_outer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -159,7 +159,7 @@ body .active a {
     overflow-y: hidden;
   }
 
-  .slider .subscribe {
+  .main-slider.subscribe {
     min-width: 304px;
     width: 100%;
   }
@@ -169,13 +169,13 @@ body .active a {
       clamp(5vw, 30px, 30px) clamp(5vw, 30px, 30px);
   }
 
-  .slider .slider__content {
+  .main-slider.main-slider__content {
     margin: clamp(5vw, 10%, 50px) clamp(4vw, 23%, 220px) clamp(4vw, 10%, 86px)
       clamp(2vw, 7%, 50px);
   }
 
   .banner,
-  .slider {
+  .main-slider {
     width: 80%;
     background-size: cover;
   }
@@ -371,11 +371,11 @@ body .active a {
     font-size: 32px;
   }
 
-  .slider .subscribe {
+  .main-slider.subscribe {
     min-width: 0;
   }
 
-  .slider .slider__content {
+  .main-slider.main-slider__content {
     margin: 1.5rem 1.5rem 3rem;
   }
 
