@@ -55,7 +55,7 @@
 
 .slider__slide {
   position: absolute;
-  top: 0;
+  top: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,12 +77,12 @@
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.5s;
-  outline: 1px solid #19c179;
+  outline: 1px solid var(--color-green-2);
   background-color: var(--color-white);
 }
 
 .slider__dot_active {
-  background-color: #19c179;
+  background-color: var(--color-green-2);
   opacity: 1;
 }
 

@@ -2,7 +2,8 @@ import { formatTime, getRandomDateWithinMonth } from "./utils.js";
 
 // Slider
 
-const slider = (slides, dotContainer, slider) => {
+const slider = (slides, dotContainer = null, slider) => {
+  if (!slides || !slider) return;
   let curSlide = 0;
 
   const createDots = () => {
@@ -15,7 +16,7 @@ const slider = (slides, dotContainer, slider) => {
   };
 
   const activateDot = (slide) => {
-    dotContainer.querySelectorAll(".slider__dot").forEach((dot) => {
+    Array.from(dotContainer.children).forEach((dot) => {
       dot.classList.toggle("slider__dot_active", dot.dataset.slide == slide);
     });
   };
@@ -29,13 +30,13 @@ const slider = (slides, dotContainer, slider) => {
   const nextSlide = () => {
     curSlide = (curSlide + 1) % slides.length;
     goToSlide(curSlide);
-    activateDot(curSlide);
+    dotContainer && activateDot(curSlide);
   };
 
   const prevSlide = () => {
     curSlide = (curSlide - 1 + slides.length) % slides.length;
     goToSlide(curSlide);
-    activateDot(curSlide);
+    dotContainer && activateDot(curSlide);
   };
 
   const swipeSlider = () => {
@@ -48,9 +49,7 @@ const slider = (slides, dotContainer, slider) => {
     });
 
     slider.addEventListener("touchmove", (event) => {
-      if (!initialX || !initialY) {
-        return;
-      }
+      if (!initialX || !initialY) return;
 
       const currentX = event.touches[0].clientX;
       const currentY = event.touches[0].clientY;
@@ -66,38 +65,38 @@ const slider = (slides, dotContainer, slider) => {
     });
   };
 
-  const initBannerSlider = () => {
-    goToSlide(0);
+  goToSlide(0);
+  swipeSlider();
+  if (dotContainer) {
     createDots();
     activateDot(0);
-    swipeSlider();
-  };
-
-  initBannerSlider();
-
-  const sliderSmallBtns = slider.previousElementSibling?.querySelector(
-    ".slider-small__btns"
-  );
-
-  if (sliderSmallBtns) {
-    const btnRight = sliderSmallBtns.querySelector(".slider-small__btn_right");
-    const btnLeft = sliderSmallBtns.querySelector(".slider-small__btn_left");
-    btnRight.addEventListener("click", nextSlide);
-    btnLeft.addEventListener("click", prevSlide);
   }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowRight") nextSlide();
-    if (e.key === "ArrowLeft") prevSlide();
-  });
+  const sliderBtns =
+    slider.previousElementSibling?.querySelector(".slider__btns");
 
-  dotContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("slider__dot")) {
-      const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activateDot(slide);
-    }
-  });
+  if (sliderBtns) {
+    const btnRight = sliderBtns.querySelector(".slider__btn_right");
+    const btnLeft = sliderBtns.querySelector(".slider__btn_left");
+    btnRight && btnRight.addEventListener("click", nextSlide);
+    btnLeft && btnLeft.addEventListener("click", prevSlide);
+  }
+
+  if (slider.classList.contains("main-slider")) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+  }
+
+  dotContainer &&
+    dotContainer.addEventListener("click", (e) => {
+      if (e.target.classList.contains("slider__dot")) {
+        const { slide } = e.target.dataset;
+        goToSlide(slide);
+        activateDot(slide);
+      }
+    });
 };
 
 const mainSlider = document.querySelector(".main-slider");
@@ -114,6 +113,10 @@ const promotionsSlider = document.querySelector(".promotions");
 const promotionsSlides = promotionsSlider.querySelectorAll(".promotions-slide");
 const promotionsDotContainer = promotionsSlider.querySelector(".slider__dots");
 slider(promotionsSlides, promotionsDotContainer, promotionsSlider);
+
+const smallSlider = document.querySelector(".small-slider");
+const smallSliderSlides = smallSlider.querySelectorAll(".small-slider__slide");
+slider(smallSliderSlides, null, smallSlider);
 
 // Timers
 
@@ -155,7 +158,3 @@ const enableTimers = () => {
 };
 
 enableTimers();
-
-
-
-

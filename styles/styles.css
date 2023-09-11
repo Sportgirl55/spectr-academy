@@ -4,6 +4,7 @@
 @import url("products.css");
 @import url("dropdown.css");
 @import url("elements.css");
+@import url("media-queries.css");
 
 /* Subscribe slider & banner */
 
@@ -26,7 +27,7 @@
 }
 
 .main-slide {
-  max-height: 438px;
+  height: 438px;
 }
 
 .slider-1 {
@@ -38,7 +39,6 @@
 }
 
 .main-slider__content {
-  display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 90px 300px 86px 50px;
@@ -103,13 +103,13 @@
   margin-bottom: 8px;
 }
 
-.slider-small__btns {
+.slider__btns {
   display: flex;
   gap: 12px;
   margin-top: 8px;
 }
 
-.slider-small {
+.small-slider {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -117,10 +117,14 @@
 
   overflow-y: inherit;
   gap: var(--gap);
-  max-height: 145px;
+  height: 145px;
 }
 
-.slider-small__btn {
+.small-slider__slide {
+  gap: var(--gap);
+}
+
+.slider__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,19 +138,19 @@
     0px 9px 15px 0px rgba(9, 30, 66, 0.08);
 }
 
-.slider-small__btn:hover {
+.slider__btn:hover {
   background: var(--color-green-gradient);
 }
 
-.slider-small__btn:hover path {
+.slider__btn:hover path {
   fill: var(--color-white);
 }
 
-.slider-small__btn:active {
+.slider__btn:active {
   transform: scale(0.95);
 }
 
-.slider-small__item {
+.small-slider__item {
   display: flex;
   width: 120px;
   padding: 20px 28px;
@@ -158,11 +162,11 @@
   cursor: pointer;
 }
 
-.slider-small__item:hover {
+.small-slider__item:hover {
   box-shadow: var(--color-shadow);
 }
 
-.slider-small__item:active {
+.small-slider__item:active {
   outline: 1px solid var(--color-light-green);
 }
 
@@ -191,7 +195,7 @@
   background-color: #e9ecf4;
 }
 
-.slider-small__icon {
+.small-slider__icon {
   display: flex;
   width: 48px;
   height: 48px;
@@ -204,32 +208,32 @@
   background-size: contain;
 }
 
-.slider-small__icon_sets {
+.small-slider__icon_sets {
   background-image: url(/images/sets.png);
 }
-.slider-small__icon_fruits {
+.small-slider__icon_fruits {
   background-image: url(/images/fruits.png);
 }
-.slider-small__icon_vegetables {
+.small-slider__icon_vegetables {
   background-image: url(/images/vegetables.png);
 }
-.slider-small__icon_greenery {
+.small-slider__icon_greenery {
   background-image: url(/images/greenery.png);
 }
-.slider-small__icon_mushrooms {
+.small-slider__icon_mushrooms {
   background-image: url(/images/mushrooms.png);
 }
-.slider-small__icon_groceries {
+.small-slider__icon_groceries {
   background-image: url(/images/groceries.png);
 }
-.slider-small__icon_sweets {
+.small-slider__icon_sweets {
   background-image: url(/images/sweet.png);
 }
-.slider-small__icon_beverages {
+.small-slider__icon_beverages {
   background-image: url(/images/beverages.png);
 }
 
-.slider-small__text {
+.small-slider__text {
   color: var(--color-light-black);
   font-size: 14px;
   font-weight: 700;
