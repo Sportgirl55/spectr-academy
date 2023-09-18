@@ -1,10 +1,10 @@
 export const formatTime = (elem) => elem.toString().padStart(2, "0");
 
-// Генератор случайных дат в пределах текущего месяца
+// Генератор случайных дат в пределах 45 дней
 
-export function getRandomDateWithinMonth() {
+export function getRandomDate() {
   const currentMonth = new Date().getMonth();
   const currentYear = new Date().getFullYear();
-  const randomDay = Math.floor(Math.random() * 30) + 1;
+  const randomDay = Math.floor(Math.random() * 45) + 1;
   return new Date(currentYear, currentMonth, randomDay);
 }

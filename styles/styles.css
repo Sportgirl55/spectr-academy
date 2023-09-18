@@ -27,14 +27,14 @@
 }
 
 .main-slide {
-  height: 438px;
+  height: 437px;
 }
 
-.slider-1 {
+.main-slide-1 {
   background-image: url("/images/glass.jpg");
 }
 
-.slider-2 {
+.main-slide-2 {
   background-image: url("/images/fruit.png");
 }
 
@@ -99,29 +99,26 @@
 
 /* Main */
 
+/* Small slider */
+
 .categories__header_margin {
   margin-bottom: 8px;
+}
+
+.small-slider {
+  height: 145px;
+  margin-bottom: 70px;
+  padding: 1px 1px 0;
+}
+
+#small-slider .swiper-slide {
+  height: 113px;
 }
 
 .slider__btns {
   display: flex;
   gap: 12px;
   margin-top: 8px;
-}
-
-.small-slider {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
-  overflow-y: inherit;
-  gap: var(--gap);
-  height: 145px;
-}
-
-.small-slider__slide {
-  gap: var(--gap);
 }
 
 .slider__btn {
@@ -152,7 +149,6 @@
 
 .small-slider__item {
   display: flex;
-  width: 120px;
   padding: 20px 28px;
   flex-direction: column;
   justify-content: center;
@@ -166,17 +162,13 @@
   box-shadow: var(--color-shadow);
 }
 
-.small-slider__item:active {
-  outline: 1px solid var(--color-light-green);
-}
-
 .green {
   background: var(--color-light-green);
 }
 
 .white {
   background-color: var(--color-white);
-  outline: 0.5px solid #e9ecf4;
+  outline: 1px solid #e9ecf4;
 }
 
 .pink {
@@ -239,6 +231,8 @@
   font-weight: 700;
 }
 
+/* Cards */
+
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -297,12 +291,9 @@
 /* Daily Best Sells */
 
 .big-card {
-  width: 268px;
-  height: 482px;
-  flex-shrink: 0;
+  min-width: 200px;
+  max-width: 400px;
   background-image: url("/images/milk.jpg");
-
-  display: flex;
   justify-content: flex-end;
 }
 
@@ -337,8 +328,8 @@
 }
 
 .products-slider {
-  justify-content: center;
   height: 534px;
+  padding: 2px;
 }
 
 .products-slide {
@@ -349,10 +340,6 @@
 
 .promotions {
   height: 534px;
-}
-
-.promotions-slide {
-  gap: var(--gap);
 }
 
 .promotions__item {

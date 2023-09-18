@@ -1,4 +1,17 @@
 @media (max-width: 1200px) {
+  header .header-menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 0.5rem;
+  }
+
+  .header-menu .phone__outer {
+    border-left: none;
+  }
+
   .header-top .search-form_width,
   .search-form_width .search-form {
     width: auto;
@@ -6,14 +19,6 @@
 
   .menu .dropdown__arrow_menu {
     margin-left: 0;
-  }
-
-  section .slider-banner_outer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
   }
 
   .dropdown-header-menu > svg,
@@ -33,23 +38,22 @@
     min-width: 212px;
   }
 
-  .search-form_width .search-form_margin,
-  ul.menu .menu__item > a,
-  header .header-menu > * {
-    margin: 0;
-  }
-
   ul.menu {
     gap: 0.5rem;
   }
 
-  main .small-slider {
-    overflow-y: hidden;
+  section .slider-banner_outer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
 
-  .main-slider.subscribe {
-    min-width: 304px;
-    width: 100%;
+  .search-form_width .search-form_margin,
+  ul.menu .menu__item > a,
+  header .header-menu > * {
+    margin: 0;
   }
 
   .banner .banner__content {
@@ -57,26 +61,13 @@
       clamp(5vw, 30px, 30px) clamp(5vw, 30px, 30px);
   }
 
-  .container {
-    width: clamp(300px, 98%, 1170px);
+  #small-slider .small-slider {
+    padding: 1px 2px 0;
   }
 
   .products__header_margin {
     align-items: baseline;
     margin-bottom: 16px;
-  }
-
-  header .header-menu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 2rem;
-    padding: 0.5rem;
-  }
-
-  .header-menu .phone__outer {
-    border-left: none;
   }
 
   ul.products {
@@ -92,6 +83,10 @@
 
   .mb-100 {
     margin-bottom: 50px;
+  }
+
+  .container {
+    width: clamp(300px, 98%, 1170px);
   }
 }
 
@@ -119,10 +114,6 @@
     fill: var(--color-green);
   }
 
-  footer.footer {
-    margin: 20px auto;
-  }
-
   footer .contacts_outer {
     grid-gap: clamp(20px, 50%, var(--gap));
     grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -142,22 +133,25 @@
     font-size: clamp(14px, calc(2vw + 8px), 28px);
   }
 
+  .promotions__item .timer {
+    gap: 2px;
+    margin-left: 0;
+  }
+
+  .promotions .promotions__info {
+    margin: 30px 30px 22px;
+  }
+
+  .promotions .over-text {
+    font-size: 36px;
+  }
+
   .footer .phones {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .main-slider .main-slider__content {
-    padding: 50px clamp(8px, 32%, 245px) 50px clamp(8px, 4%, 50px);
-    background-position: right bottom;
-  }
-
-  .slider-banner .main-slider,
-  .banner {
-    width: 100%;
-  }
-
   .header-top .search-form_width {
     position: relative;
     flex-direction: column;
@@ -184,10 +178,30 @@
     text-align: center;
   }
 
-  ul.products__menu {
-    display: flex;
-    justify-content: space-evenly;
+  .main-slider .main-slider__content {
+    padding: 50px clamp(8px, 32%, 245px) 50px clamp(8px, 4%, 50px);
+    background-position: right bottom;
+  }
+
+  .slider-banner .main-slider,
+  .banner {
     width: 100%;
+  }
+
+  section .categories__header_margin {
+    margin-bottom: 30px;
+  }
+
+  #products .products__category {
+    font-size: 24px;
+  }
+
+  .products-slider .products__item {
+    min-width: 200px;
+  }
+
+  .products-slider .products__fav {
+    right: 28px;
   }
 
   .footer .contacts {
@@ -251,30 +265,41 @@
     align-items: center;
   }
 
-  ul.products__menu {
-    flex-direction: column;
-    height: 240px;
-    margin-bottom: 32px;
-  }
-  .menu .menu__item,
-  .products__menu .products__category {
-    font-size: 32px;
-  }
-
   .main-slider .subscribe {
     min-width: 270px;
   }
 
-  .main-slider.main-slider__content {
-    margin: 1.5rem 1.5rem 3rem;
+  .subscribe .subscribe__input {
+    padding-left: 4px;
+  }
+
+  #products .products__menu {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    gap: 20px;
+  }
+
+  .menu .menu__item,
+  #products .products__category,
+  .promotions .over-text {
+    font-size: 32px;
+  }
+
+  .products-slider .products__fav {
+    right: 0px;
+  }
+
+  #daily .products-slider {
+    width: 90%;
+  }
+
+  .timer .timer__box {
+    width: 60px;
   }
 
   .footer .contacts_outer {
     grid-template-columns: 1fr;
     grid-gap: 16px;
-  }
-
-  .subscribe .subscribe__input {
-    padding-left: 4px;
   }
 }

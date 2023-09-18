@@ -1,4 +1,4 @@
-import { formatTime, getRandomDateWithinMonth } from "./utils.js";
+import { formatTime, getRandomDate } from "./utils.js";
 
 // Slider
 
@@ -72,22 +72,22 @@ const slider = (slides, dotContainer = null, slider) => {
     activateDot(0);
   }
 
-  const sliderBtns =
-    slider.previousElementSibling?.querySelector(".slider__btns");
+  // Если есть кнопки переключения слайдов
 
-  if (sliderBtns) {
-    const btnRight = sliderBtns.querySelector(".slider__btn_right");
-    const btnLeft = sliderBtns.querySelector(".slider__btn_left");
-    btnRight && btnRight.addEventListener("click", nextSlide);
-    btnLeft && btnLeft.addEventListener("click", prevSlide);
-  }
+  // const sliderBtns =
+  //   slider.previousElementSibling?.querySelector(".slider__btns");
 
-  if (slider.classList.contains("main-slider")) {
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") nextSlide();
-      if (e.key === "ArrowLeft") prevSlide();
-    });
-  }
+  // if (sliderBtns) {
+  //   const btnRight = sliderBtns.querySelector(".slider__btn_right");
+  //   const btnLeft = sliderBtns.querySelector(".slider__btn_left");
+  //   btnRight && btnRight.addEventListener("click", nextSlide);
+  //   btnLeft && btnLeft.addEventListener("click", prevSlide);
+  // }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") nextSlide();
+    if (e.key === "ArrowLeft") prevSlide();
+  });
 
   dotContainer &&
     dotContainer.addEventListener("click", (e) => {
@@ -104,24 +104,10 @@ const mainSlides = mainSlider.querySelectorAll(".main-slide");
 const mainDotContainer = mainSlider.querySelector(".slider__dots");
 slider(mainSlides, mainDotContainer, mainSlider);
 
-const productsSlider = document.querySelector(".products-slider");
-const productSlides = productsSlider.querySelectorAll(".products-slide");
-const dotContainer = productsSlider.querySelector(".slider__dots");
-slider(productSlides, dotContainer, productsSlider);
-
-const promotionsSlider = document.querySelector(".promotions");
-const promotionsSlides = promotionsSlider.querySelectorAll(".promotions-slide");
-const promotionsDotContainer = promotionsSlider.querySelector(".slider__dots");
-slider(promotionsSlides, promotionsDotContainer, promotionsSlider);
-
-const smallSlider = document.querySelector(".small-slider");
-const smallSliderSlides = smallSlider.querySelectorAll(".small-slider__slide");
-slider(smallSliderSlides, null, smallSlider);
-
 // Timers
 
 function countdown(elem) {
-  let endDate = new Date(getRandomDateWithinMonth()).getTime();
+  let endDate = new Date(getRandomDate()).getTime();
   if (isNaN(endDate)) return;
   const timer = setInterval(calculate, 1000);
 
@@ -158,3 +144,111 @@ const enableTimers = () => {
 };
 
 enableTimers();
+
+//Swiper
+
+const swiperPromotions = new Swiper(".promotions", {
+  loop: true,
+  pagination: {
+    el: ".promotions .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: "#promotions .slider__btn_right",
+    prevEl: "#promotions .slider__btn_left",
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  slidesPerView: 2,
+  spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 8,
+    },
+    1200: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+  },
+});
+
+const swiperDaily = new Swiper(".products-slider", {
+  loop: false,
+  pagination: {
+    el: ".products-slider .swiper-pagination",
+    clickable: true,
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  navigation: {
+    nextEl: "#daily .slider__btn_right",
+    prevEl: "#daily .slider__btn_left",
+  },
+  slidesPerView: 4,
+  spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 8,
+    },
+    800: {
+      slidesPerView: 3,
+      spaceBetween: 8,
+    },
+    1050: {
+      slidesPerView: 4,
+      spaceBetween: 8,
+    },
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+  },
+});
+
+const swiperSmall = new Swiper("#small-slider .swiper", {
+  loop: true,
+  navigation: {
+    nextEl: "#small-slider .slider__btn_right",
+    prevEl: "#small-slider .slider__btn_left",
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  slidesPerView: 8,
+  spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 16,
+    },
+    480: {
+      slidesPerView: 3,
+    },
+    768: {
+      slidesPerView: 6,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 7,
+      spaceBetween: 30,
+    },
+    1200: {
+      slidesPerView: 8,
+      spaceBetween: 30,
+    },
+  },
+});
