@@ -72,18 +72,6 @@ const slider = (slides, dotContainer = null, slider) => {
     activateDot(0);
   }
 
-  // Если есть кнопки переключения слайдов
-
-  // const sliderBtns =
-  //   slider.previousElementSibling?.querySelector(".slider__btns");
-
-  // if (sliderBtns) {
-  //   const btnRight = sliderBtns.querySelector(".slider__btn_right");
-  //   const btnLeft = sliderBtns.querySelector(".slider__btn_left");
-  //   btnRight && btnRight.addEventListener("click", nextSlide);
-  //   btnLeft && btnLeft.addEventListener("click", prevSlide);
-  // }
-
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") nextSlide();
     if (e.key === "ArrowLeft") prevSlide();
@@ -184,10 +172,6 @@ const swiperDaily = new Swiper(".products-slider", {
     el: ".products-slider .swiper-pagination",
     clickable: true,
   },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
-  },
   navigation: {
     nextEl: "#daily .slider__btn_right",
     prevEl: "#daily .slider__btn_left",
@@ -223,10 +207,6 @@ const swiperSmall = new Swiper("#small-slider .swiper", {
   navigation: {
     nextEl: "#small-slider .slider__btn_right",
     prevEl: "#small-slider .slider__btn_left",
-  },
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true,
   },
   slidesPerView: 8,
   spaceBetween: 30,
